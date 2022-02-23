@@ -43,7 +43,7 @@ public class SqlQueries {
     //Select all departments and values of total and average salary per department
     //Name column containing name of the department "depname".
     //language=HSQLDB
-    String select09 = "SELECT d.NAME as DEPNAME, AVG(e.SALARY) as "AVERAGE SALARY" FROM DEPARTMENT d INNER JOIN EMPLOYEE e ON d.ID = e.DEPARTMENT GROUP BY d.NAME";
+    String select09 = "SELECT d.NAME as DEPNAME, AVG(e.SALARY) as \"AVERAGE SALARY\" FROM DEPARTMENT d INNER JOIN EMPLOYEE e ON d.ID = e.DEPARTMENT GROUP BY d.NAME";
 
     //Select lastnames of all employees and lastnames of their managers if an employee has a manager.
     //Name column containing employee's lastname "employee".
