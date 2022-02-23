@@ -22,12 +22,12 @@ public class SqlQueries {
 
     //Select all employees assigned to departments and corresponding department
     //language=HSQLDB
-    String select05 = "";
+    String select05 = "SELECT e.* FROM DEPARTMENT d INNER JOIN EMPLOYEE e ON d.ID = e.DEPARTMENT";
 
     //Select all employees and corresponding department name if there is one.
     //Name column containing name of the department "depname".
     //language=HSQLDB
-    String select06 = "";
+    String select06 = "SELECT e.*, d.NAME as DEPNAME FROM DEPARTMENT d INNER JOIN EMPLOYEE e ON d.ID = e.DEPARTMENT";
 
     //Select total salary pf all employees. Name it "total".
     //language=HSQLDB
@@ -37,18 +37,19 @@ public class SqlQueries {
     //Name column containing name of the department "depname".
     //Name column containing employee amount "staff_size".
     //language=HSQLDB
-    String select08 = "";
+    String select08 = "SELECT d.NAME as DEPNAME, COUNT(*) FROM DEPARTMENT d INNER JOIN EMPLOYEE e ON d.ID = e.DEPARTMENT GROUP BY d.NAME";
+    //should use right join instead of inner join if null results are needed
 
     //Select all departments and values of total and average salary per department
     //Name column containing name of the department "depname".
     //language=HSQLDB
-    String select09 = "";
+    String select09 = "SELECT d.NAME as DEPNAME, AVG(e.SALARY) as "AVERAGE SALARY" FROM DEPARTMENT d INNER JOIN EMPLOYEE e ON d.ID = e.DEPARTMENT GROUP BY d.NAME";
 
     //Select lastnames of all employees and lastnames of their managers if an employee has a manager.
     //Name column containing employee's lastname "employee".
     //Name column containing manager's lastname "manager".
     //language=HSQLDB
-    String select10 = "";
+    String select10 = "SELECT e1.LASTNAME as EMPLOYEE, e2.LASTNAME as MANAGER FROM EMPLOYEE e1 INNER JOIN EMPLOYEE e2 ON e1.MANAGER = e2.ID";
 
 
 }
